@@ -4,6 +4,7 @@
 Therm::Therm(int pin)
 {
     _pin = pin;
+    pinMode(_pin, INPUT);
 }
 
 float Therm::raw()

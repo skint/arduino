@@ -9,6 +9,10 @@ LEDStrip::LEDStrip(int pin)
 
 void LEDStrip::setValue(int value)
 {
+    if (value > 255)
+    {
+        value = 255;
+    }
     _val = value;
     analogWrite(_pin, _val);
 }
