@@ -9,6 +9,7 @@ class Power
         void on();
         void off();
         int status();
+        int defs();
         void reset(int delayTime = 3000);
     private:
         int _pin;

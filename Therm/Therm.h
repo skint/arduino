@@ -1,5 +1,5 @@
-#ifndef Therm_h
-#define Therm_h
+#ifndef THERM_H
+#define THERM_H
 
 #include <Arduino.h>
 

@@ -1,17 +1,20 @@
-#ifndef LEDSTRIP_H
-#define LEDSTRIP_H
+#ifndef FAN_H
+#define FAN_H
 #include <Arduino.h>
 
-class LEDStrip
+class Fan
 {
     public:
-        LEDStrip(int pin);
+        Fan(int pin1, int pin2 = 2);
         void setValue(int value);
         int value();
         void setPercents(int value);
         int percents();
+        int rpm();
+        unsigned long rpms;
     private:
-        int _pin;
+        int _controlPin;
+        int _rpmPin;
         int _val;
 };
 

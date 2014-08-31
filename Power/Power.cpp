@@ -9,26 +9,32 @@ Power::Power(int pin, int state)
 
 void Power::on()
 {
+    int action;
     if (_state == LOW)
     {
-        digitalWrite(_pin, HIGH);
+        action = HIGH;
     }
-    else
+    else if (_state == HIGH)
     {
-        digitalWrite(_pin, LOW);
+        action = LOW;
     }
+
+    digitalWrite(_pin, action);
 }
 
 void Power::off()
 {
-    if (_state == HIGH)
+    int action;
+    if (_state == LOW)
     {
-        digitalWrite(_pin, LOW);
+        action = LOW;
     }
-    else
+    else if (_state == HIGH)
     {
-        digitalWrite(_pin, HIGH);
+        action = HIGH;
     }
+
+    digitalWrite(_pin, action);
 }
 
 int Power::status()
@@ -41,6 +47,11 @@ int Power::status()
     {
         return HIGH;
     }
+}
+
+int Power::defs()
+{
+    return _state;
 }
 
 void Power::reset(int delayTime)
